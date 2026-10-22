@@ -1,0 +1,3 @@
+Alembic environment and initial schema migration are configured in this directory.
+Run from the repository root with `alembic -c backend/alembic.ini upgrade head`,
+or from `backend/` with `alembic upgrade head`.

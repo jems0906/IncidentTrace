@@ -1,0 +1,13 @@
+[
+  {
+    "id": "demo-warehouse-near-miss",
+    "title": "Pallet shifted at east dispatch bay",
+    "incident_type": "Near miss",
+    "status": "Closed",
+    "occurred_at": "2026-09-18T08:42:00",
+    "location": "East dispatch bay, Northstar Distribution Centre",
+    "description": "During morning dispatch, a pallet moved approximately 20 cm while being raised from a floor-level stack. The load remained on the forks and no one was injured. A picker was outside the marked exclusion zone. The operator stopped the truck and reported the near miss.",
+    "immediate_actions": "Truck parked with forks lowered; bay isolated; pallet and adjacent loads checked for damage; dispatch paused pending a competent load-stability check.",
+    "reporter": "Jordan Lee"
+  }
+]

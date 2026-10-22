@@ -1,0 +1,7 @@
+[
+  {"occurred_at":"2026-09-18T08:34:00","event":"Dispatch team begins loading; floor-level pallet staged at east bay.","source":"Shift handover interview; dispatch plan"},
+  {"occurred_at":"2026-09-18T08:39:00","event":"Operator approaches the pallet and raises the forks to lift the load.","source":"Operator interview; vehicle telematics"},
+  {"occurred_at":"2026-09-18T08:42:00","event":"Pallet shifts about 20 cm on the forks; operator stops. No contact or injury.","source":"Operator and picker interviews; bay camera 08:42"},
+  {"occurred_at":"2026-09-18T08:46:00","event":"Truck parked, load lowered, and bay temporarily isolated.","source":"Supervisor log; scene photo"},
+  {"occurred_at":"2026-09-18T09:18:00","event":"Competent check finds two damaged lower boards and mixed pallet footprints; dispatch resumes with inspected pallets only.","source":"Load inspection record; pallet photographs"}
+]
