@@ -72,13 +72,14 @@ Create three Railway services from the connected GitHub repository: a PostgreSQL
 4. Set backend `DATABASE_URL` to a reference to the PostgreSQL service's `DATABASE_URL`, such as `${{Postgres.DATABASE_URL}}`. Set `CORS_ORIGINS` to the frontend's exact public HTTPS origin (scheme and host only).
 5. Set frontend build variable `VITE_API_URL` to the backend's full public HTTPS origin. Vite embeds this value at build time; rebuild the frontend after changing it.
 6. Generate a public domain for each web service. The frontend Nginx server listens on port 80 and serves `index.html` for SPA routes. Set the frontend public networking target port to 80.
-7. After the backend is connected to PostgreSQL, run migrations from the backend service context with `alembic upgrade head`. Seed the demo with `python scripts/seed_database.py` from the repository root (or run the seed through a one-off command with the backend source available). For a monorepo deployment where only `/backend` is available, run the seed script from a separate repository checkout or one-off job that includes `scripts/`.
+7. The backend service is configured with the pre-deploy command `alembic upgrade head`, so migrations run before each deployment. To load the fictional demo, run `python scripts/seed_database.py` from the repository root with the backend's PostgreSQL `DATABASE_URL` available. Because the backend service root is `/backend` and does not include `scripts/`, run the seeder from a repository checkout or a one-off job that includes the repository-level `scripts/` directory. The deployed project has the demo case seeded already.
 8. Confirm `/health`, open `/docs`, and load the frontend domain. Check browser network requests and CORS origin if the UI cannot reach the API.
 
-The app creates missing tables at startup for local convenience; production schema changes should be made through Alembic migrations. Keep database credentials in Railway variables, not in source control. The application does not store uploaded media; evidence is recorded as metadata and optional links.
+The app calls SQLAlchemy `create_all()` at startup as a convenience; this creates missing tables but does not apply schema changes to existing tables. Railway also runs Alembic migrations before backend deployments. Use migrations for all schema changes and do not rely on startup table creation as a production migration strategy. Keep database credentials in Railway variables, not in source control. The application does not store uploaded media; evidence is recorded as metadata and optional links.
 
 ## API overview
 
+- `GET /` (API service information)
 - `GET /health`
 - `GET /api/incidents`, `POST /api/incidents`, `GET /api/incidents/{id}`
 - `POST /api/incidents/{id}/timeline`, `POST /api/incidents/{id}/evidence`
