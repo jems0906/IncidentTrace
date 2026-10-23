@@ -33,7 +33,7 @@ Backend (from `backend/`):
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
 alembic upgrade head
 python ..\scripts\seed_database.py
 uvicorn app.main:app --reload

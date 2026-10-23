@@ -1,4 +1,4 @@
-import { Activity, ArrowUpRight, Check, ClipboardCheck, Download, FileText, Info, MapPin, Search, ShieldAlert, Sparkles } from 'lucide-react';
+import { Activity, ArrowUpRight, Check, ClipboardCheck, Download, FileText, Info, Search, ShieldAlert, Sparkles } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { dateLabel, timeLabel } from '../lib/format.js';
 import { EmptyState } from './ui.jsx';

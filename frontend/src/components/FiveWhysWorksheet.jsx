@@ -1,5 +1,3 @@
-import { SectionHeading } from './ui.jsx';
-
 export default function FiveWhysWorksheet({ answers, onChange }) {
   return <section className="panel five-whys-panel">
     <div className="panel-head"><div><p className="eyebrow">ITERATIVE QUESTIONING</p><h3>5 Whys worksheet</h3></div><span className="worksheet-tag">INVESTIGATOR-LED</span></div>
